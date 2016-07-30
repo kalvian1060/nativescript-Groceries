@@ -5,8 +5,8 @@ var dialogsModule = require("ui/dialogs");
 //var Observable = require("data/observable").Observable;
 var UserViewModel = require("../../shared/view-models/user-view-model");
 var user = new UserViewModel({
-    email: "",
-    password: ""
+    email: "t@example.com",
+    password: "heslo"
 });
 
 

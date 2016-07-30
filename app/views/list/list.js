@@ -71,3 +71,9 @@ exports.share = function() {
     var listString = list.join(", ").trim();
     socialShare.shareText(listString);
 };
+
+exports.delete = function(args) {
+    var item = args.view.bindingContext;
+    var index = groceryList.indexOf(item);
+    groceryList.delete(index);
+};
