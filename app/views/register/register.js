@@ -18,7 +18,7 @@ function completeRegistration() {
                     frameModule.topmost().navigate("views/login/login");
                 });
         }).catch(function(error) {
-            console.log(error);
+            console.info(error);
             dialogsModule
                 .alert({
                     message: "Unfortunately we were unable to create your account.",
@@ -28,5 +28,12 @@ function completeRegistration() {
 }
 
 exports.register = function() {
-    completeRegistration();
+    if (user.isValidEmail()) {
+        completeRegistration();
+    } else {
+        dialogsModule.alert({
+            message: "Enter a valid email address.",
+            okButtonText: "OK"
+        });
+    }
 };
